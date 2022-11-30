@@ -1,0 +1,29 @@
+.homepage {
+  .col-7 {
+    margin-top: 100px;
+  }
+
+  h1 {
+   color: #2b8d2b;
+  }
+  h2{
+    font-size: 1.5rem;
+  }
+}
+
+#navbarSupportedContent {
+  .nav-item {
+    padding-right: 0.5rem !important;
+    padding-left: 0.5rem !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container, .container-lg, .container-md, .container-sm, .container-xl {
+    max-width: 1140px;
+  }
+}
+
+a {
+  color: #2b8d2b;
+}

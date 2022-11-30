@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<div class="row homepage">
+    <div class="col-7">
+        <p>
+            <i class="bi bi-terminal"></i>
+            Hello world! Welcome to my research lab
+        </p>
+        <h1>I am Ravi Raja Merugu</h1>
+        <h2>a Researcher and Technology Enthusiast.</h2>
+
+        <p>
+            {%- for works_at in site.works_at -%}
+
+            <i class="bi bi-briefcase"></i> {{works_at.position}}
+            <a href="{{works_at.website}}" class="me-3">@{{works_at.org}}</a>
+            {%- endfor -%}
+        </p>
+        <p><i class="bi bi-journal"></i> I write my research stories about Graph data modelling,
+            Visualisations and web technologies.</p>
+
+        <p><a class="btn btn-outline-success" href="/stories/">Read stories &rarr;</a></p>
+    </div>
+</div>
