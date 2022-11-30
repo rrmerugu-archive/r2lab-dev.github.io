@@ -10,19 +10,19 @@ layout: default
 
 
     {% if site.paginate %}
-    {% assign posts = paginator.posts %}
+    {% assign stories = paginator.stories %}
     {% else %}
-    {% assign posts = site.posts %}
+    {% assign stories = site.stories %}
     {% endif %}
 
 
-    {%- if posts.size > 0 -%}
+    {%- if stories.size > 0 -%}
     {%- if page.list_title -%}
     <h2 class="post-list-heading">{{ page.list_title }}</h2>
     {%- endif -%}
     <ul class="post-list list-unstyled">
         {%- assign date_format = site.bootstrap.date_format | default: "%b %-d, %Y" -%}
-        {%- for post in posts -%}
+        {%- for post in stories -%}
         <li class="mb-4">
             <span class="post-meta text-muted">{{ post.date | date: date_format }}</span>
             <h3 class="h5">

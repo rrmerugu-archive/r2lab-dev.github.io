@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "My first home lab setup" 
+title:  Hello world!  
 date:   2022-11-29 18:03:47 +0530
 categories: jekyll update
 ---
