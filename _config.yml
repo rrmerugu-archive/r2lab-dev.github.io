@@ -33,8 +33,8 @@ plugins:
   - jekyll-feed
   - jekyll-remote-theme
 
-#remote_theme: jonaharagon/jekyll-bootstrap-theme
-theme: jekyll-bootstrap-theme
+remote_theme: jonaharagon/jekyll-bootstrap-theme
+#theme: jekyll-bootstrap-theme
 
 # Build settings
 #theme: minima
