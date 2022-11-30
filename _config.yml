@@ -37,7 +37,7 @@ remote_theme: jonaharagon/jekyll-bootstrap-theme
 
 # Build settings
 #theme: minima
-theme: jekyll-bootstrap-theme
+#theme: jekyll-bootstrap-theme
 
 bootstrap:
   header_pages:
