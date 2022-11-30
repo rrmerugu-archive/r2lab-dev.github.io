@@ -28,14 +28,16 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: rrmerugu
 github_username: rrmerugu
 
-# Build settings
-#theme: minima
-theme: jekyll-bootstrap-theme
+
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
 
 remote_theme: jonaharagon/jekyll-bootstrap-theme
+
+# Build settings
+#theme: minima
+theme: jekyll-bootstrap-theme
 
 bootstrap:
   header_pages:
