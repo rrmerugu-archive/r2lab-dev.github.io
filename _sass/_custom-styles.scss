@@ -4,9 +4,10 @@
   }
 
   h1 {
-   color: #2b8d2b;
+    color: #2b8d2b;
   }
-  h2{
+
+  h2 {
     font-size: 1.5rem;
   }
 }
@@ -24,6 +25,14 @@
   }
 }
 
+.post-meta {
+  font-size: 0.9rem;
+}
+
 a {
   color: #2b8d2b;
+  :hover, :active, :focus{
+      color: #459845 !important;
+
+  }
 }

@@ -23,9 +23,9 @@ layout: default
     <ul class="post-list list-unstyled">
         {%- assign date_format = site.bootstrap.date_format | default: "%b %-d, %Y" -%}
         {%- for post in posts -%}
-        <li class="mb-5">
+        <li class="mb-4">
             <span class="post-meta text-muted">{{ post.date | date: date_format }}</span>
-            <h3>
+            <h3 class="h5">
                 <a class="post-link text-decoration-none" href="{{ post.url | relative_url }}">
                     {{ post.title | escape }}
                 </a>
