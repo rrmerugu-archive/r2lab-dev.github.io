@@ -26,22 +26,25 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: rrmerugu
-github_username:  rrmerugu
+github_username: rrmerugu
 
 # Build settings
 #theme: minima
 theme: jekyll-bootstrap-theme
 plugins:
   - jekyll-feed
+  - jekyll-remote-theme
+
+remote_theme: jonaharagon/jekyll-bootstrap-theme@v1.1.0
 
 bootstrap:
   header_pages:
-   - stories.markdown
-#   - about.markdown
+    - stories.markdown
+  #   - about.markdown
   social_links:
     twitter: 'https://twitter.com/rrmerugu'
-    linkedin:  'https://linkedin.com/in/rrmerugu'
-    github:  'https://github.com/rrmerugu'
+    linkedin: 'https://linkedin.com/in/rrmerugu'
+    github: 'https://github.com/rrmerugu'
 #author:
 #  name: 'Ravi Raja Merugu'
 #  email: 'rrmerugu@gmail.com'
@@ -53,6 +56,7 @@ works_at:
   - position: Graph Science Lead
     org: EonCollective
     website: https://eoncollective.com
+
 
 
 excerpts:
