@@ -1,3 +1,5 @@
+@import "./monokai.css";
+
 .homepage {
   .col-7 {
     margin-top: 100px;
@@ -31,8 +33,23 @@
 
 a {
   color: #2b8d2b;
-  :hover, :active, :focus{
-      color: #459845 !important;
 
+  :hover, :active, :focus {
+    color: #459845 !important;
+
+  }
+}
+
+
+.highlight {
+  font-size: 18px;
+  pre {
+    //background-color: #272822;
+    padding-top: 5px;
+  }
+
+  .gutter.gl {
+    padding: 10px;
+    color: white;
   }
 }
