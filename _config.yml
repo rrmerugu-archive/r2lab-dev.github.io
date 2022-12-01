@@ -89,8 +89,9 @@ excerpts:
 #   stories:
 #     output: true
 
+permalink: /post/:categories/:slug:output_ext
 
-permalink:  /post/:slugified_categories/:slug:output_ext
+
 #permalink: pretty
 # Exclude from processing.
 # The following items will not be processed, by default.
