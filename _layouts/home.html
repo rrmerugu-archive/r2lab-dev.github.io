@@ -2,7 +2,7 @@
 layout: default
 ---
 <div class="row homepage">
-    <div class="col-6  ">
+    <div class="col-7  ">
         <img src="/assets/images/profile-pic.jpeg" class="img-fluid mb-4 rounded-circle"/>
         <p>
             <i class="bi bi-terminal"></i>
@@ -22,14 +22,19 @@ layout: default
             modelling,
             Visualisations and web technologies.</p>
 
-        <p><a class="btn btn-outline-success" href="/stories/">Read stories &rarr;</a></p>
+        <p><a class="btn btn-success" href="/posts/">Read posts &rarr;</a></p>
     </div>
-    <div class="col-6">
+    <div class="col-5">
 
-<!--        <ul class="list-unstyled">-->
-<!--            {% for post in site.stories limit:5 %}-->
-<!--            <li><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>-->
-<!--            {% endfor %}-->
-<!--        </ul>-->
+        {% assign stories = site.stories limit:5 %}
+        <h2 class="h6 text-decoration-underline mb-3 text-uppercase">Recent Posts</h2>
+        <ul class="post-list list-unstyled">
+            {%- assign date_format = site.bootstrap.date_format | default: "%b %-d, %Y" -%}
+            {%- for post in stories -%}
+            {% include post-list-item.html %}
+            {%- endfor -%}
+        </ul>
+
+
     </div>
 </div>

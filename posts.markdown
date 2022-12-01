@@ -4,6 +4,6 @@
 
 layout: posts
 title: Posts
-permalink: /stories/
+permalink: /posts/
 ---
  
