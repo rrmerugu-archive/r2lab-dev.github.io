@@ -3,11 +3,13 @@ layout: default
 ---
 <div class="">
     {%- if page.title -%}
-    <h1 class="page-heading py-2">{{ page.title }}</h1>
+    <h1 class="page-heading pt-4 ">{{ page.title }}</h1>
+     <p>Posts can be <i class="bi bi-journal"></i>stories or
+         <i class="bi bi-lightbulb"></i>thoughts</p>
+    <hr>
     {%- endif -%}
 
     {{ content }}
-
 
     {% if site.paginate %}
     {% assign stories = paginator.stories %}
@@ -25,11 +27,25 @@ layout: default
         {%- for post in stories -%}
         <li class="mb-4">
             <span class="post-meta text-muted">{{ post.date | date: date_format }}</span>
-            <h3 class="h5">
+            <h3 class="h5 mb-0">
                 <a class="post-link text-decoration-none" href="{{ post.url | relative_url }}">
-                    {{ post.title | escape }}
+                    {{ post.title | escape }}  
                 </a>
             </h3>
+
+            <ul class="list-group list-group-horizontal">
+                <li class="list-group-item border-0 ps-0 pe-4">
+                {% if post.story %}
+                    <i class="bi bi-journal"></i> Story
+                    {% else %}
+                    <i class="bi bi-lightbulb"></i> Thought
+                    {% endif %}
+                </li>
+                {% for cat in post.categories %}
+                <li class="list-group-item border-0 ps-0 pe-4">
+                    <i class="bi bi-tag"></i> {{cat}}</li>
+                {% endfor %}
+            </ul>
             {%- if site.excerpts.show -%}
             {%- if site.excerpts.auto_truncate -%}{{ post.excerpt | truncatewords: 32 }}{%- else -%}{{ post.excerpt
             }}{%- endif -%}

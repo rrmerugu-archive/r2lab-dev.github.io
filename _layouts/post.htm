@@ -1,0 +1,78 @@
+---
+layout: default
+---
+<div class="row">
+    <div class="col-9">
+
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header py-3">
+    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+    <p class="post-meta text-muted mb-0">
+      {%- assign date_format = site.bootstrap.date_format | default: "%b %-d, %Y" -%}
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {{ page.date | date: date_format }}
+      </time>
+      {%- if page.modified_date -%}
+        ~
+        {%- assign mdate = page.modified_date | date_to_xmlschema -%}
+        <time class="dt-modified" datetime="{{ mdate }}" itemprop="dateModified">
+          {{ mdate | date: date_format }}
+        </time>
+      {%- endif -%}
+    {%- if page.author -%}
+        • {% for author in page.author %}
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">{{ author }}</span></span>
+            {%- if forloop.last == false %}, {% endif -%}
+        {% endfor %}
+        {% else %}
+        <span class"ms-4">|</span>   <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Ravi Raja Merugu</span></span>
+      {%- endif -%} 
+    </p>
+
+      <ul class="list-group list-group-horizontal">
+        <li class="list-group-item border-0 ps-0 pe-4">
+        {% if page.story %}
+            <i class="bi bi-journal"></i> Story
+            {% else %}
+            <i class="bi bi-lightbulb"></i> Thought
+            {% endif %}
+        </li>
+        {% for cat in page.categories %}
+        <li class="list-group-item border-0 ps-0 pe-4">
+            <i class="bi bi-tag"></i> {{cat}}</li>
+        {% endfor %}
+    </ul>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article>
+</div>
+<div class="col-3">
+    <div class="card mt-4">
+        <div class="card-header">
+          Table of Contents
+        </div>
+        <div class="card-body">
+    {{ content | toc_only }}
+    </div>
+    </div>
+</div>
+</div>
+
+<div class="row mt-5 mb-5">
+    <div class="PageNavigation mt-5">
+        {% if page.previous.url %}
+          <a class="prev mr-5" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
+        {% endif %}
+        {% if page.next.url %}
+          <a class="next ml-5" href="{{page.next.url}}">{{page.next.title}} &raquo;</a>
+        {% endif %}
+      </div>
+</div>

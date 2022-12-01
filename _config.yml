@@ -32,6 +32,7 @@ github_username: rrmerugu
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
+  - jekyll-toc
 
 remote_theme: jonaharagon/jekyll-bootstrap-theme
 #theme: jekyll-bootstrap-theme
@@ -40,9 +41,27 @@ remote_theme: jonaharagon/jekyll-bootstrap-theme
 #theme: minima
 #theme: jekyll-bootstrap-theme
 
+defaults:
+  - scope:
+      path: ""
+    values:
+      toc: true
+
+# https://github.com/toshimaru/jekyll-toc#default-configuration
+toc:
+  min_level: 1
+  max_level: 6
+  ordered_list: false
+  no_toc_section_class: no_toc_section
+  list_id: toc
+  list_class: list-unstyled
+  sublist_class: ''
+  item_class: ""
+  item_prefix: toc-
+      
 bootstrap:
   header_pages:
-    - stories.markdown
+    - posts.markdown
   #   - about.markdown
   social_links:
     twitter: 'https://twitter.com/rrmerugu'
@@ -64,7 +83,7 @@ works_at:
 
 excerpts:
   show: false
-  auto_truncate: true
+  auto_truncate: false
 
 collections:
   stories:
