@@ -2,7 +2,7 @@
 layout: default
 ---
 <div class="row homepage">
-    <div class="col-7  ">
+    <div class="col-md-7  ">
         <img src="/assets/images/profile-pic.jpeg" class="img-fluid mb-4 rounded-circle"/>
         <p>
             <i class="bi bi-terminal"></i>
@@ -24,11 +24,11 @@ layout: default
 
         <p><a class="btn btn-success" href="/posts/">Read posts &rarr;</a></p>
     </div>
-    <div class="col-5">
-
+    <div class="col-md-5">
+        <div class="mt-5 d-sm-block"></div>
         {% assign stories = site.posts limit:5 %}
         <h2 class="h6 text-decoration-underline mb-3 text-uppercase">Recent Posts</h2>
-        <ul class="post-list list-unstyled">
+        <ul class="post-list list-unstyled mb-5">
             {%- for post in stories -%}
             {% include post-list-item.html %}
             {%- endfor -%}
