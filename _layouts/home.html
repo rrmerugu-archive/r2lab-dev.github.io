@@ -26,10 +26,9 @@ layout: default
     </div>
     <div class="col-5">
 
-        {% assign stories = site.stories limit:5 %}
+        {% assign stories = site.posts limit:5 %}
         <h2 class="h6 text-decoration-underline mb-3 text-uppercase">Recent Posts</h2>
         <ul class="post-list list-unstyled">
-            {%- assign date_format = site.bootstrap.date_format | default: "%b %-d, %Y" -%}
             {%- for post in stories -%}
             {% include post-list-item.html %}
             {%- endfor -%}

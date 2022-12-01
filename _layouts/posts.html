@@ -4,7 +4,7 @@ layout: default
 <div class="">
     {%- if page.title -%}
     <h1 class="page-heading pt-4 ">{{ page.title }}</h1>
-    <p>Posts can be <i class="bi bi-journal"></i>stories or
+    <p>Posts can be <i class="bi bi-journal"></i>research stories or
         <i class="bi bi-lightbulb"></i>thoughts</p>
     <hr>
     {%- endif -%}
@@ -12,19 +12,18 @@ layout: default
     {{ content }}
 
     {% if site.paginate %}
-    {% assign stories = paginator.stories %}
+    {% assign posts = paginator.posts %}
     {% else %}
-    {% assign stories = site.stories %}
+    {% assign posts = site.posts %}
     {% endif %}
 
 
-    {%- if stories.size > 0 -%}
+    {%- if posts.size > 0 -%}
     {%- if page.list_title -%}
     <h2 class="post-list-heading">{{ page.list_title }}</h2>
     {%- endif -%}
     <ul class="post-list list-unstyled">
-        {%- assign date_format = site.bootstrap.date_format | default: "%b %-d, %Y" -%}
-        {%- for post in stories -%}
+        {%- for post in posts -%}
         {% include post-list-item.html %}
         {%- endfor -%}
     </ul>
