@@ -25,32 +25,7 @@ layout: default
     <ul class="post-list list-unstyled">
         {%- assign date_format = site.bootstrap.date_format | default: "%b %-d, %Y" -%}
         {%- for post in stories -%}
-        <li class="mb-4">
-            <span class="post-meta text-muted">{{ post.date | date: date_format }}</span>
-            <h3 class="h6 mb-0">
-                <a class="post-link text-decoration-none" href="{{ post.url | relative_url }}">
-                    {{ post.title | escape }}  
-                </a>
-            </h3>
-
-            <ul class="list-group list-group-horizontal">
-                <li class="list-group-item border-0 ps-0 pe-4 text-muted">
-                {% if post.story %}
-                    <i class="bi bi-journal"></i> Story
-                    {% else %}
-                    <i class="bi bi-lightbulb"></i> Thought
-                    {% endif %}
-                </li>
-                {% for cat in post.categories %}
-                <li class="list-group-item border-0 ps-0 pe-4  text-muted">
-                    <i class="bi bi-tag"></i> {{cat}}</li>
-                {% endfor %}
-            </ul>
-            {%- if site.excerpts.show -%}
-            {%- if site.excerpts.auto_truncate -%}{{ post.excerpt | truncatewords: 32 }}{%- else -%}{{ post.excerpt
-            }}{%- endif -%}
-            {%- endif -%}
-        </li>
+            {% include post-list-item.html %}
         {%- endfor -%}
     </ul>
 
