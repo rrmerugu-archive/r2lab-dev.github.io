@@ -2,14 +2,15 @@
 layout: default
 ---
 <div class="row homepage">
-    <div class="col-7">
+    <div class="col-6  ">
+        <img src="/assets/images/profile-pic.jpeg" class="img-fluid mb-4 rounded-circle"/>
         <p>
             <i class="bi bi-terminal"></i>
             Hello world! Welcome to my research lab
         </p>
         <h1>I am Ravi Raja Merugu</h1>
         <h2>a Researcher and Technology Enthusiast.</h2>
- 
+
         <p>
             {%- for works_at in site.works_at -%}
 
@@ -17,9 +18,18 @@ layout: default
             <a href="{{works_at.website}}" class="me-3">@{{works_at.org}}</a>
             {%- endfor -%}
         </p>
-        <p class="text-muted"><i class="bi bi-journal"></i> I write my thoughts and research stories about Graph data modelling,
+        <p class="text-muted"><i class="bi bi-journal"></i> I write my thoughts and research stories about Graph data
+            modelling,
             Visualisations and web technologies.</p>
 
         <p><a class="btn btn-outline-success" href="/stories/">Read stories &rarr;</a></p>
+    </div>
+    <div class="col-6">
+
+<!--        <ul class="list-unstyled">-->
+<!--            {% for post in site.stories limit:5 %}-->
+<!--            <li><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>-->
+<!--            {% endfor %}-->
+<!--        </ul>-->
     </div>
 </div>

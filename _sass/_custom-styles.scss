@@ -1,9 +1,8 @@
 @import "./monokai.css";
 
 .homepage {
-  .col-7 {
-    margin-top: 100px;
-  }
+  margin-top: 60px;
+
 
   h1 {
     color: #2b8d2b;
@@ -40,9 +39,14 @@ a {
   }
 }
 
+h6 {
+  font-size: 1rem !important;
+}
+
 
 .highlight {
   font-size: 18px;
+
   pre {
     //background-color: #272822;
     padding-top: 5px;
@@ -54,9 +58,22 @@ a {
   }
 }
 
-#toc.list-unstyled{
-    a{
-      text-decoration: none;
-      color: #222;
-    }
+#toc.list-unstyled {
+  a {
+    text-decoration: none;
+    color: #222;
   }
+}
+.post-list {
+  .h6{
+    display: inline;
+    margin-left: 10px;
+  }
+  .bi{
+    font-size: 0.8rem;
+  }
+  .list-group-item{
+    padding: 0.2rem 1rem;
+
+  }
+}

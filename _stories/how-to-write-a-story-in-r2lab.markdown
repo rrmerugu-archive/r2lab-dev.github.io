@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  How to write a story in r2lab
-date:   2022-11-29 18:03:47 +0530
+date:   2022-11-30 18:03:47 +0530
 categories: ["How to", ]
 story: false
 Keywords: ["how to", "research notes", ]
