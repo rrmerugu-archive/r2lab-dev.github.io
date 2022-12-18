@@ -1,5 +1,10 @@
-@import "./monokai.css";
+// @import "./monokai.css";
+@import "./friendly.css";
 
+copre, code, kbd, sampde{
+  font-size: 1rem !important;
+  font-family: 'Courier New', Courier, monospace;
+}
 .homepage {
   margin-top: 60px;
 
@@ -45,16 +50,20 @@ h6 {
 
 
 .highlight {
-  font-size: 18px;
+  font-size: 16px;
 
   pre {
     //background-color: #272822;
     padding-top: 5px;
+    code{
+        font-size: 0.9rem !important;
+
+    }
   }
 
   .gutter.gl {
     padding: 10px;
-    color: white;
+    // color: white;
   }
 }
 
