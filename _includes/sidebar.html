@@ -1,0 +1,29 @@
+<div class=" border-end vh-100 ">
+    <!-- <img src="/assets/images/profile-pic.jpeg" class="img-fluid mb-4 rounded-circle"/> -->
+    <div class="clearfix   pt-5"></div>
+    <div class=" highlight py-1 px-1 mb-3">
+        <p class="{% if page.url == '/' %}typewriter{% endif %} mb-0">
+            <i class="bi bi-terminal-fill"></i>
+            Hello world! Welcome to my journal
+        </p>
+    </div>
+    <h1 class="h3 text-success">I am Ravi Raja Merugu</h1>
+    <!-- <p class=" mb-1 text-dark">
+            <i class="bi bi-briefcase me-2"></i>  {%- for works_at in site.works_at -%}
+            {{works_at.position}}
+            <a href="{{works_at.website}}" class="me-3 text-dark">@{{works_at.org}}</a>
+            {%- endfor -%}
+        </p> -->
+    <p class="text-muted">A researcher and technology enthusiast. I journal my thoughts
+        and research stories about graph data, visualisations, automations and web technologies.</p>
+    <p><a class="btn btn-secondary" href="/posts/">Read all posts &rarr;</a></p>
+    {% assign stories = site.posts limit:5 %}
+    <h3 class="h6 pb-2 pt-2 mt-5 text-uppercase border-top border-bottom">
+        Recent Posts
+    </h3>
+    <ul class="post-list list-unstyled mb-5">
+        {%- for post in stories -%}
+        {% include post-list-item-small.html %}
+        {%- endfor -%}
+    </ul>
+</div>
