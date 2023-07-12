@@ -13,17 +13,25 @@ html, body{
   // font-size: 16px;
 }
 
-// copre, code, kbd, sampde{
-//   font-size: 1rem !important;
-//   font-family: 'Courier New', Courier, monospace;
-// }
+[data-bs-theme=dark] {
+  body {
+      --bs-link-color: #9d76f9;
+      --bs-link-color-rgb: 157, 118, 249;
+      --bs-link-hover-color: #533696;
+      --bs-link-hover-color-rgb: 83, 54, 150;
+      --bs-code-color: #efefef;
+  }
+}
 
-// @media (min-width: 1200px) {
-//   .container, .container-lg, .container-md, .container-sm, .container-xl {
-//     max-width: 1140px;
-//   }
-// }
-
+[data-bs-theme=light] {
+  body {
+      --bs-link-color: #8a5cf6;
+      --bs-link-color-rgb: 139, 92, 246;
+      --bs-link-decoration: underline;
+      --bs-link-hover-color: #533696;
+      --bs-link-hover-color-rgb: 83, 54, 150;
+  }
+}
 .btn{
   border-radius: 0 !important;
 }
@@ -43,7 +51,7 @@ html, body{
 .typewriter {
   // https://css-tricks.com/snippets/css/typewriter-effect/
   overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid #333; /* The typwriter cursor */
+  border-right: .15em solid var(--bs-link-color); /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
   // margin: 0 auto; /* Gives that scrolling effect as the typing happens */
   letter-spacing: .15em; /* Adjust as needed */
@@ -63,6 +71,8 @@ html, body{
   from, to { border-color: transparent }
   50% { border-color: #333; }
 }
+
+ 
 
 // .homepage {
 //   margin-top: 60px;
