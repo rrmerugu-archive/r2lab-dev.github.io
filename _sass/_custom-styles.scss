@@ -12,6 +12,10 @@ copre, code, kbd, sampde{
   }
 }
 
+.btn{
+  border-radius: 0 !important;
+}
+
 a {
   color: #2b8d2b;
   :hover, :active, :focus {
@@ -19,45 +23,69 @@ a {
   }
 }
 
-.homepage {
-  margin-top: 60px;
-  h1 {
-    color: #2b8d2b;
-  }
-  h2 {
-    font-size: 1.5rem;
-  }
+.typewriter {
+  // https://css-tricks.com/snippets/css/typewriter-effect/
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  // margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 1.5s steps(40, end),
+    blink-caret .75s step-end infinite;
 }
 
-#navbarSupportedContent {
-  .nav-item {
-    padding-right: 0.5rem !important;
-    padding-left: 0.5rem !important;
-  }
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
 }
 
-.post-meta {
-  font-size: 0.9rem;
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #333; }
 }
 
-h6 {
-  font-size: 1rem !important;
-}
+// .homepage {
+//   margin-top: 60px;
+//   h1 {
+//     color: #2b8d2b;
+//   }
+//   h2 {
+//     font-size: 1.5rem;
+//   }
+// }
 
-.highlight {
-  font-size: 16px;
-  pre {
-    //background-color: #272822;
-    padding-top: 5px;
-    code{
-        font-size: 0.9rem !important;
-    }
-  }
-  .gutter.gl {
-    padding: 10px;
-    // color: white;
-  }
-}
+// #navbarSupportedContent {
+//   .nav-item {
+//     padding-right: 0.5rem !important;
+//     padding-left: 0.5rem !important;
+//   }
+// }
+
+// .post-meta {
+//   font-size: 0.9rem;
+// }
+
+// h6 {
+//   font-size: 1rem !important;
+// }
+
+// .highlight {
+//   font-size: 16px;
+//   pre {
+//     //background-color: #272822;
+//     padding-top: 5px;
+//     code{
+//         font-size: 0.9rem !important;
+//     }
+//   }
+//   .gutter.gl {
+//     padding: 10px;
+//     // color: white;
+//   }
+// }
 
 #toc.list-unstyled {
   a {
