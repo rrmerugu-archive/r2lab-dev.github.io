@@ -1,33 +1,45 @@
 // @import "./monokai.css";
-@import "./friendly.css";
-@import "./github-markdown-css.css";
 
+@import "./github-markdown-css.css";
+@import "_reboot.scss";
+@import "./friendly.css";
+@import "./monokai.css";
+// @import "./bs-vars.css";
+
+
+// $primary : #ff0000;
 html, body{
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  // font-size: 16px;
 }
 
-copre, code, kbd, sampde{
-  font-size: 1rem !important;
-  font-family: 'Courier New', Courier, monospace;
-}
+// copre, code, kbd, sampde{
+//   font-size: 1rem !important;
+//   font-family: 'Courier New', Courier, monospace;
+// }
 
-@media (min-width: 1200px) {
-  .container, .container-lg, .container-md, .container-sm, .container-xl {
-    max-width: 1140px;
-  }
-}
+// @media (min-width: 1200px) {
+//   .container, .container-lg, .container-md, .container-sm, .container-xl {
+//     max-width: 1140px;
+//   }
+// }
 
 .btn{
   border-radius: 0 !important;
 }
 
-// a {
-//   color: #2b8d2b;
-//   :hover, :active, :focus {
-//     color: rgb(28, 67, 28) !important;
+
+.markdown-body  table.rouge-table tr {
+  background-color: transparent !important;
+}
+// [data-bs-theme=dark]{
+//   a {
+//       color:   #9d76f9;
+//       :hover, :active, :focus {
+//       color: rgb(28, 67, 28) !important;
+//     }
 //   }
 // }
-
 .typewriter {
   // https://css-tricks.com/snippets/css/typewriter-effect/
   overflow: hidden; /* Ensures the content is not revealed until the animation */

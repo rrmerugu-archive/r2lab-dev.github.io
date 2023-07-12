@@ -101,7 +101,7 @@
   -webkit-text-size-adjust: 100%;
   margin: 0;
   color: var(--color-fg-default);
-  // background-color: var(--color-canvas-default);
+  /* background-color: var(--color-canvas-default); */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   font-size: 16px;
   line-height: 1.5;
@@ -208,7 +208,8 @@
 .markdown-body pre,
 .markdown-body samp {
   font-family: monospace;
-  font-size: 1em;
+  /* font-size: 1em; */
+  font-size: 16px;
 }
 
 .markdown-body figure {
@@ -437,14 +438,14 @@
 .markdown-body code,
 .markdown-body samp {
   font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
-  font-size: 12px;
+  /* font-size: 12px; */
 }
 
 .markdown-body pre {
   margin-top: 0;
   margin-bottom: 0;
   font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
-  font-size: 12px;
+  /* font-size: 12px; */
   word-wrap: normal;
 }
 
@@ -506,7 +507,7 @@
 .markdown-body ul,
 .markdown-body ol,
 .markdown-body dl,
-.markdown-body table,
+/* .markdown-body table, */
 .markdown-body pre,
 .markdown-body details {
   margin-top: 0;
@@ -660,7 +661,7 @@
 .markdown-body table th,
 .markdown-body table td {
   padding: 6px 13px;
-  border: 1px solid var(--color-border-default);
+  /* border: 1px solid var(--color-border-default); */
 }
 
 .markdown-body table tr {
@@ -782,10 +783,15 @@
 .markdown-body tt {
   padding: .2em .4em;
   margin: 0;
-  font-size: 85%;
+  font-size: 14px;
   white-space: break-spaces;
   background-color: var(--color-neutral-muted);
   border-radius: 0 !important;
+}
+
+code{
+  background-color: var(--color-neutral-muted);
+
 }
 
 .markdown-body code br,
@@ -798,7 +804,7 @@
 }
 
 .markdown-body samp {
-  font-size: 85%;
+  font-size: 14px;
 }
 
 .markdown-body pre code {
@@ -825,9 +831,9 @@
 
 .markdown-body .highlight pre,
 .markdown-body pre {
-  padding: 16px;
+  /* padding: 16px; */
   overflow: auto;
-  font-size: 85%;
+  font-size: 14px;
   line-height: 1.45;
   background-color: var(--color-canvas-subtle);
   border-radius: 0;
@@ -1101,4 +1107,18 @@
 
 .markdown-body ::-webkit-calendar-picker-indicator {
   filter: invert(50%);
+}
+
+
+
+
+.markdown-body .rouge-table .rouge-gutter {
+  border-right: 1px solid var(--color-border-default);
+}
+.markdown-body table.rouge-table  tr{
+  border: none;
+}
+.markdown-body .rouge-code pre,
+.markdown-body .rouge-gutter pre {
+  line-height:  1.45rem;
 }

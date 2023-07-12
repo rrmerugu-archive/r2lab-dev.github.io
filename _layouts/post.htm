@@ -13,7 +13,8 @@ layout: default
                 <ul class="list-group list-group-horizontal">
                     <li class="list-group-item border-0 ps-0 pe-4">
                         {%- assign date_format = site.bootstrap.date_format | default: "%b %d, %Y" -%}
-                        <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+                        <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}"
+                            itemprop="datePublished">
                             {{ page.date | date: date_format }}
                         </time>
                         {%- if page.modified_date -%}
@@ -24,7 +25,7 @@ layout: default
                         </time>
                         {%- endif -%}
                     </li>
-             
+
 
                     <!-- <li class="list-group-item border-0 ps-0 pe-4">
                         {% if page.story %}
@@ -42,26 +43,28 @@ layout: default
                     <li class="list-group-item  border-0 ps-0 pe-4">
                         {%- if page.author -%}
                         • {% for author in page.author %}
-                        <span itemprop="author"  itemscope itemtype="http://schema.org/Person">
+                        <span itemprop="author" itemscope itemtype="http://schema.org/Person">
                             <span class="p-author h-card" itemprop="name">{{ author }}</span></span>
                         {%- if forloop.last == false %}, {% endif -%}
                         {% endfor %}
                         {% else %}
-                        <span class=" me-3">•</span> <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                        <span class=" me-3">•</span> <span itemprop="author" itemscope
+                            itemtype="http://schema.org/Person">
                             <span class="p-author h-card" itemprop="name">Ravi Raja Merugu</span></span>
                         {%- endif -%}
                     </li>
                 </ul>
                 <h1 class="fw-bold" itemprop="name headline">
                     {% if page.story %}
-                    <i class="bi bi-journal small"></i> 
+                    <i class="bi bi-journal small"></i>
                     {% else %}
-                    <i class="bi bi-lightbulb small"></i> 
+                    <i class="bi bi-lightbulb small"></i>
                     {% endif %}
-                    {{ page.title | escape }}</h1>
-            
+                    {{ page.title | escape }}
+                </h1>
 
-         
+
+
             </header>
 
             <div class="post-content markdown-body e-content" itemprop="articleBody">
@@ -74,7 +77,7 @@ layout: default
 
         <div class="row mt-5 mb-5">
             <div class="col-md-12">
-        
+
                 <div class="PageNavigation mt-5">
                     {% if page.previous.url %}
                     <a class="prev text-start me-5" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
@@ -97,3 +100,52 @@ layout: default
         </div>
     </div>
 </div>
+
+  <style>
+    /* _sass/_post.css */
+    pre.highlight>button {
+        opacity: 0;
+        position: relative;
+        right: 2px;
+        /* top: 0;
+        left: calc(100% - 65px); */
+    }
+
+    pre.highlight:hover>button {
+        opacity: 1;
+    }
+
+    pre.highlight>button:active,
+    pre.highlight>button:focus {
+        opacity: 1;
+    }
+</style>
+
+<script>
+    // assets/js/post.js
+    var codeBlocks = document.querySelectorAll('pre.highlight');
+
+    codeBlocks.forEach(function (codeBlock) {
+        var copyButton = document.createElement('button');
+        copyButton.className = 'copy btn btn-secondary py-0 px-2 fs-6 small';
+        copyButton.type = 'button';
+        copyButton.ariaLabel = 'Copy code to clipboard';
+        copyButton.innerText = 'Copy';
+        copyButton.style.float = "right"
+
+        codeBlock.prepend(copyButton);
+
+        copyButton.addEventListener('click', function () {
+            var code = codeBlock.querySelector('code .rouge-code').innerText.trim();
+            window.navigator.clipboard.writeText(code);
+
+            copyButton.innerText = 'Copied';
+            var fourSeconds = 4000;
+
+            setTimeout(function () {
+                copyButton.innerText = 'Copy';
+            }, fourSeconds);
+        });
+    });
+</script> 
+ 
