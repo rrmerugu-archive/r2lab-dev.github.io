@@ -5,14 +5,25 @@ copre, code, kbd, sampde{
   font-size: 1rem !important;
   font-family: 'Courier New', Courier, monospace;
 }
+
+@media (min-width: 1200px) {
+  .container, .container-lg, .container-md, .container-sm, .container-xl {
+    max-width: 1140px;
+  }
+}
+
+a {
+  color: #2b8d2b;
+  :hover, :active, :focus {
+    color: #459845 !important;
+  }
+}
+
 .homepage {
   margin-top: 60px;
-
-
   h1 {
     color: #2b8d2b;
   }
-
   h2 {
     font-size: 1.5rem;
   }
@@ -25,42 +36,23 @@ copre, code, kbd, sampde{
   }
 }
 
-@media (min-width: 1200px) {
-  .container, .container-lg, .container-md, .container-sm, .container-xl {
-    max-width: 1140px;
-  }
-}
-
 .post-meta {
   font-size: 0.9rem;
-}
-
-a {
-  color: #2b8d2b;
-
-  :hover, :active, :focus {
-    color: #459845 !important;
-
-  }
 }
 
 h6 {
   font-size: 1rem !important;
 }
 
-
 .highlight {
   font-size: 16px;
-
   pre {
     //background-color: #272822;
     padding-top: 5px;
     code{
         font-size: 0.9rem !important;
-
     }
   }
-
   .gutter.gl {
     padding: 10px;
     // color: white;
