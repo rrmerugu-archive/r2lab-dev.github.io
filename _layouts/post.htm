@@ -26,20 +26,20 @@ layout: default
                     </li>
              
 
-                    <li class="list-group-item border-0 ps-0 pe-4">
+                    <!-- <li class="list-group-item border-0 ps-0 pe-4">
                         {% if page.story %}
                         <i class="bi bi-journal"></i> Story
                         {% else %}
                         <i class="bi bi-lightbulb"></i> Thought
                         {% endif %}
-                    </li>
+                    </li> -->
                     {% for cat in page.categories %}
                     <li class="list-group-item border-0 ps-0 pe-4">
                         <i class="bi bi-tag"></i> {{cat}}
                     </li>
                     {% endfor %}
 
-                    <li class="list-group-item border-0 ps-0 pe-4">
+                    <li class="list-group-item  border-0 ps-0 pe-4">
                         {%- if page.author -%}
                         • {% for author in page.author %}
                         <span itemprop="author"  itemscope itemtype="http://schema.org/Person">
@@ -47,12 +47,18 @@ layout: default
                         {%- if forloop.last == false %}, {% endif -%}
                         {% endfor %}
                         {% else %}
-                        <span class="ms-3 me-3">|</span> <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                        <span class=" me-3">•</span> <span itemprop="author" itemscope itemtype="http://schema.org/Person">
                             <span class="p-author h-card" itemprop="name">Ravi Raja Merugu</span></span>
                         {%- endif -%}
                     </li>
                 </ul>
-                <h1 class="fw-bold" itemprop="name headline">{{ page.title | escape }}</h1>
+                <h1 class="fw-bold" itemprop="name headline">
+                    {% if page.story %}
+                    <i class="bi bi-journal small"></i> 
+                    {% else %}
+                    <i class="bi bi-lightbulb small"></i> 
+                    {% endif %}
+                    {{ page.title | escape }}</h1>
             
 
          
