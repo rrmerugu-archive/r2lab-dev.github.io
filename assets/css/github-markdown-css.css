@@ -788,6 +788,8 @@
   white-space: break-spaces;
   background-color: var(--color-neutral-muted);
   border-radius: 0 !important;
+  color: var(--bs-body-color);
+
 }
 
 code{
