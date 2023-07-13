@@ -26,7 +26,7 @@ body {
     --bs-code-color: #efefef;
   }
   // a:hover, a:focus {
-  //   color : var(--bs-nav-link-hover-color);
+  //   color: rgba(var(--bs-link-hover-color-rgb), var(--bs-link-opacity, 1));
   // }
 }
 
@@ -48,13 +48,13 @@ a{
   color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));
   text-decoration: none;
   :hover, :focus {
-    color: rgba(var(--bs-link-hover-color-rgb), var(--bs-link-opacity, 1));
+    // color: rgba(var(--bs-link-hover-color-rgb), var(--bs-link-opacity, 1));
     text-decoration: underline;
   }
 }
-// a:hover{
-//   color: rgba(var(--bs-link-hover-color-rgb), var(--bs-link-opacity, 1));
-// }
+a:hover{
+  color: rgba(var(--bs-link-hover-color-rgb), var(--bs-link-opacity, 1));
+}
 .nav-item {
   .nav-link.active {
     color: var(--bs-link-color) !important;

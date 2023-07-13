@@ -10,7 +10,7 @@ Keywords: ["invana", ]
 
 
 
-# Invana Studio 
+<!-- # Invana Studio  -->
 Open source graph visualiser.
 
 
