@@ -21,7 +21,7 @@
 title: r2lab
 email: rrmerugu@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Researcher and Technologist Enthusiast.
+  A Researcher and Technologist Enthusiast.
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
@@ -78,9 +78,9 @@ bootstrap:
     github: 'https://github.com/rrmerugu'
     skype: 'skype:rrmerugu?chat'
 
-#author:
-#  name: 'Ravi Raja Merugu'
-#  email: 'rrmerugu@gmail.com'
+author:
+ name: 'Ravi Raja Merugu'
+ email: 'rrmerugu@gmail.com'
 
 works_at:
   - position: Founder

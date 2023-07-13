@@ -2,5 +2,27 @@
 # Feel free to add content and custom Front Matter to this file.
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
-layout: home
+layout: posts
 ---
+<div class="row">
+    <div class="col-md-12 mt-5">
+        <!-- <div class=" mb-3 py-1 px-1 me-3 rounded-0 mt-5" style="display: inline-block;">
+            <span style="display: block;" class="{% if page.url == '/' %}typewriter{% endif %} mb-0 h1 fw-light">
+                <i class="bi bi-terminal-fill "></i>
+                Hello world!
+            </span>      
+        </div> -->
+
+        <div class="alert alert-dark mb-3 py-2 px-2 mt-2 me-3 rounded-0" >
+            <div  style="display: inline-block;">
+            <p class="{% if page.url == '/' %}typewriter{% endif %} mb-0">
+                <i class="bi bi-terminal-fill"></i>
+                Hello world! Welcome to my journal 
+            </p>
+        </div>
+        </div>
+
+    </div>
+</div>
+
+
