@@ -2,52 +2,83 @@
     {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths = site.bootstrap.header_pages | default: default_paths -%}
     {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+    <nav class="navbar navbar-expand-lg border-bottom">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a>
             {%- if titles_size > 0 -%}
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                    <!-- <li>
+                                    <a  href="{{ '/' | relative_url }}"class="nav-link">
+                                        <i class="bi bi-house-fill"></i>
+                                    </a>
+                                </li> -->
                     {%- for path in page_paths -%}
                     {%- assign my_page = site.pages | where: "path", path | first -%}
                     {%- if my_page.title -%}
-                    <li class="nav-item">
+                    <li class="nav-item me-2">
                         <a class="nav-link {% if page.url == my_page.url %} active" aria-current="page{%- endif -%}"
-                           href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+                            href="{{ my_page.url | relative_url }}">{{
+                            my_page.title | escape }}</a>
                     </li>
                     {%- endif -%}
                     {%- endfor -%}
 
                     {%- assign social = site.bootstrap.social_links -%}
                     {%- if social.github -%}
-                    <li class="nav-item"><a rel="me" class="nav-link " href="{{ social.github }}"><i
-                            class="bi bi-github" role="img" aria-label="GitHub"></i></a></li>
+                    <li class="nav-item me-2"><a rel="me" class="nav-link " href="{{ social.github }}"><i
+                                class="bi bi-github" role="img" aria-label="GitHub"></i></a></li>
                     {%- endif -%}
                     {%- if social.linkedin -%}
-                    <li class="nav-item"><a rel="me" class="nav-link " href="{{ social.linkedin }}"><i
-                            class="bi bi-linkedin" role="img" aria-label="LinkedIn"></i></a></li>
+                    <li class="nav-item me-2"><a rel="me" class="nav-link " href="{{ social.linkedin }}"><i
+                                class="bi bi-linkedin" role="img" aria-label="LinkedIn"></i></a></li>
                     {%- endif -%}
                     {%- if social.twitter -%}
-                    <li class="nav-item"><a rel="me" class="nav-link " href="{{ social.twitter }}"><i
-                            class="bi bi-twitter" role="img" aria-label="Twitter"></i></a></li>
+                    <li class="nav-item me-2"><a rel="me" class="nav-link " href="{{ social.twitter }}"><i
+                                class="bi bi-twitter" role="img" aria-label="Twitter"></i></a></li>
                     {%- endif -%}
                     {%- if social.discord -%}
-                    <li class="nav-item"><a rel="me" class="nav-link " href="{{ social.discord }}"><i
-                            class="bi bi-discord" role="img" aria-label="Discord"></i></a></li>
+                    <li class="nav-item me-2"><a rel="me" class="nav-link " href="{{ social.discord }}"><i
+                                class="bi bi-discord" role="img" aria-label="Discord"></i></a></li>
                     {%- endif -%}
                     {%- if social.skype -%}
-                    <li class="nav-item"><a rel="me" class="nav-link " href="{{ social.skype }}"><i
-                            class="bi bi-skype" role="img" aria-label="skype"></i></a></li>
+                    <li class="nav-item me-2"><a rel="me" class="nav-link " href="{{ social.skype }}"><i
+                                class="bi bi-skype" role="img" aria-label="skype"></i></a></li>
                     {%- endif -%}
                     {%- if social.youtube -%}
-                    <li class="nav-item"><a rel="me" class="nav-link " href="{{ social.youtube }}"><i
-                            class="bi bi-youtube" role="img" aria-label="YouTube"></i></a></li>
+                    <li class="nav-item me-2"><a rel="me" class="nav-link " href="{{ social.youtube }}"><i
+                                class="bi bi-youtube" role="img" aria-label="YouTube"></i></a></li>
                     {%- endif -%}
+                    <li class="nav-item dropdown">
+                        <button class="btn btn-link ms-2 nav-link dropdown-toggle" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme (dark)">
+                            <i class="bi bi-moon-stars-fill" id="theme-icon-active"></i>
+                          <span class="d-lg-none ms-2" id="bd-theme-text">Toggle theme</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text">
+                          <li>
+                            <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                              <!-- <svg class="bi me-2theme-icon"><use href="#sun-fill"></use></svg> -->
+                              <i class="bi bi-sun-fill   theme-icon me-2"></i> Light <i class="bi bi-check2  ms-auto d-none"></i>
+                            </button>
+                          </li>
+                          <li>
+                            <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="dark" aria-pressed="true">
+                              <i class="bi bi-moon-stars-fill theme-icon me-2"></i>  Dark <i class="bi bi-check2  ms-auto d-none"></i>
+                            </button>
+                          </li>
+                          <li>
+                            <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="false">
+                                <i class="bi bi-circle-half  theme-icon me-2"></i> Auto  <i class="bi bi-check2  ms-auto d-none"></i>
+                            </button>
+                          </li>
+                        </ul> 
+                      </li>
                 </ul>
             </div>
             {%- endif -%}

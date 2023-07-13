@@ -1,29 +1,45 @@
-{%- assign date_format = site.bootstrap.date_format | default: "%b %-d, %Y" -%}
+{%- assign date_format = site.bootstrap.date_format | default: "%b %d, %Y" -%}
 
-<li class="mb-4">
-    <span class="post-meta text-muted">{{ post.date | date: date_format }}</span>
-    <h3 class="h6 mb-0">
-        <a class="post-link text-decoration-none" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-        </a>
-    </h3>
+<li class="mb-2 pb-3 pt-2 border-bottom">
+    <a class="post-link text-decoration-none" href="{{ post.url | relative_url }}">
 
-    <ul class="list-group list-group-horizontal">
-        <li class="list-group-item border-0 ps-0 pe-4 text-muted">
-            {% if post.story %}
-            <i class="bi bi-journal"></i> Story
-            {% else %}
-            <i class="bi bi-lightbulb"></i> Thought
-            {% endif %}
-        </li>
-        {% for cat in post.categories %}
-        <li class="list-group-item border-0 ps-0 pe-4  text-muted">
-            <i class="bi bi-tag"></i> {{cat}}
-        </li>
-        {% endfor %}
-    </ul>
-    {%- if site.excerpts.show -%}
-    {%- if site.excerpts.auto_truncate -%}{{ post.excerpt | truncatewords: 32 }}{%- else -%}{{ post.excerpt
-    }}{%- endif -%}
-    {%- endif -%}
+    <div class="row">
+        <div class="col-md-9">
+            <span class="post-meta text-muted">
+                {% if post.story %}
+                <i class="bi bi-journal"></i> 
+                {% else %}
+                <i class="bi bi-lightbulb"></i> 
+                {% endif %}
+        
+                {{ post.date | date: date_format }}</span>
+            <h3 class="h6 mb-0">
+                    {{ post.title | escape }}
+            </h3>
+        </div>
+        <div class="col-md-3">
+            <ul class="list-inline text-end">
+                <!-- <li class="list-group-item border-0 ps-0 pe-4 text-muted">
+                    {% if post.story %}
+                    <i class="bi bi-journal"></i> Story
+                    {% else %}
+                    <i class="bi bi-lightbulb"></i> Thought
+                    {% endif %}
+                </li> -->
+                {% for cat in post.categories %}
+                <li class="list-inline-item border-0 ps-0 pe-4  text-muted">
+                    <i class="bi bi-tag"></i> {{cat}}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-md-12">
+            {%- if site.excerpts.show -%}
+            {%- if site.excerpts.auto_truncate -%}{{ post.excerpt | truncatewords: 32 }}{%- else -%}{{ post.excerpt
+            }}{%- endif -%}
+            {%- endif -%}
+        </div>
+    </div>
+    </a>
+
 </li>

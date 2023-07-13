@@ -1,3 +1,4 @@
+[data-bs-theme=light]{
 .highlight .hll { background-color: #ffffcc }
 .highlight  { background: #f0f0f0; }
 .highlight .c { color: #60a0b0; font-style: italic } /* Comment */
@@ -66,4 +67,5 @@
 .highlight .vg { color: #bb60d5 } /* Name.Variable.Global */
 .highlight .vi { color: #bb60d5 } /* Name.Variable.Instance */
 .highlight .vm { color: #bb60d5 } /* Name.Variable.Magic */
-.highlight .il { color: #40a070 } /* Literal.Number.Integer.Long */
+.highlight .il { color: #40a070 }  /* Literal.Number.Integer.Long */
+}

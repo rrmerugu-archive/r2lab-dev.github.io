@@ -1,89 +1,203 @@
 // @import "./monokai.css";
+
+@import "./github-markdown-css.css";
+@import "_reboot.scss";
 @import "./friendly.css";
+@import "./monokai.css";
+// @import "./bs-vars.css";
 
-copre, code, kbd, sampde{
-  font-size: 1rem !important;
-  font-family: 'Courier New', Courier, monospace;
+
+// $primary : #ff0000;
+html,
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  // font-size: 16px;
 }
-.homepage {
-  margin-top: 60px;
 
+[data-bs-theme=dark] {
+  body {
+    --bs-link-color: #bda4fa;
+    --bs-link-color-rgb: 189,164,250;
 
-  h1 {
-    color: #2b8d2b;
+    --bs-link-hover-color: #ac8ef1;
+    --bs-link-hover-color-rgb: 172,142,241;
+    --bs-nav-link-hover-color: #ac8ef1;
+
+    --bs-code-color: #efefef;
   }
-
-  h2 {
-    font-size: 1.5rem;
-  }
+  // a:hover, a:focus {
+  //   color: rgba(var(--bs-link-hover-color-rgb), var(--bs-link-opacity, 1));
+  // }
 }
 
-#navbarSupportedContent {
-  .nav-item {
-    padding-right: 0.5rem !important;
-    padding-left: 0.5rem !important;
-  }
-}
+[data-bs-theme=light] {
+  body {
+    --bs-link-color: #7039f1;
+    --bs-link-color-rgb: 112,57,241;
+    // --bs-link-color: #8d5dfc;
+    // --bs-link-color-rgb: 141,93,252;
+    --bs-link-hover-color: #9759e4;
+    --bs-link-hover-color-rgb: 151, 89, 228;
+    --bs-nav-link-hover-color: #9759e4;
 
-@media (min-width: 1200px) {
-  .container, .container-lg, .container-md, .container-sm, .container-xl {
-    max-width: 1140px;
-  }
-}
-
-.post-meta {
-  font-size: 0.9rem;
-}
-
-a {
-  color: #2b8d2b;
-
-  :hover, :active, :focus {
-    color: #459845 !important;
-
+    --bs-link-decoration: underline;
   }
 }
 
-h6 {
-  font-size: 1rem !important;
+a{
+  color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));
+  text-decoration: none;
+  :hover, :focus {
+    // color: rgba(var(--bs-link-hover-color-rgb), var(--bs-link-opacity, 1));
+    text-decoration: underline;
+  }
+}
+a:hover{
+  color: rgba(var(--bs-link-hover-color-rgb), var(--bs-link-opacity, 1));
+}
+.nav-item {
+  .nav-link.active {
+    color: var(--bs-link-color) !important;
+  }
+  // .nav-link {
+  //   :focus, :hover {
+  //     // color: var(--bs-nav-link-hover-color);
+  //     // color: rgba(var(--bs-link-hover-color-rgb), var(--bs-link-opacity, 1));
+
+  //   }
+  // }
 }
 
 
-.highlight {
-  font-size: 16px;
 
-  pre {
-    //background-color: #272822;
-    padding-top: 5px;
-    code{
-        font-size: 0.9rem !important;
 
-    }
-  }
+.post-title{
+  color: var(--bs-link-color);
+}
 
-  .gutter.gl {
-    padding: 10px;
-    // color: white;
+.post-item a, #toc a  {
+  color: var(--bs-body-color);
+  :hover,
+  :active,
+  :focus {
+    color: rgba(var(--bs-link-hover-color-rgb), var(--bs-link-opacity, 1));
   }
 }
+
+.btn {
+  border-radius: 0 !important;
+}
+
+
+.markdown-body table.rouge-table tr {
+  background-color: transparent !important;
+}
+
+
+
+
+.typewriter {
+  // https://css-tricks.com/snippets/css/typewriter-effect/
+  overflow: hidden;
+  /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid var(--bs-link-color);
+  /* The typwriter cursor */
+  white-space: nowrap;
+  /* Keeps the content on a single line */
+  // margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em;
+  /* Adjust as needed */
+  animation:
+    typing 1.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0
+  }
+
+  to {
+    width: 100%
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+
+  from,
+  to {
+    border-color: transparent
+  }
+
+  50% {
+    border-color: var(--bs-link-color);
+  }
+}
+
+
+
+// .homepage {
+//   margin-top: 60px;
+//   h1 {
+//     color: #2b8d2b;
+//   }
+//   h2 {
+//     font-size: 1.5rem;
+//   }
+// }
+
+// #navbarSupportedContent {
+//   .nav-item {
+//     padding-right: 0.5rem !important;
+//     padding-left: 0.5rem !important;
+//   }
+// }
+
+// .post-meta {
+//   font-size: 0.9rem;
+// }
+
+// h6 {
+//   font-size: 1rem !important;
+// }
+
+// .highlight {
+//   font-size: 16px;
+//   pre {
+//     //background-color: #272822;
+//     padding-top: 5px;
+//     code{
+//         font-size: 0.9rem !important;
+//     }
+//   }
+//   .gutter.gl {
+//     padding: 10px;
+//     // color: white;
+//   }
+// }
 
 #toc.list-unstyled {
   a {
     text-decoration: none;
-    color: #222;
+    // color: #222;
+    font-size: 13px;
   }
 }
+
 .post-list {
-  .h6{
+  .h6 {
     display: inline;
     margin-left: 10px;
   }
-  .bi{
+
+  .bi {
     font-size: 0.8rem;
   }
-  .list-group-item{
+
+  .list-group-item {
     padding: 0.2rem 1rem;
 
   }
 }
-

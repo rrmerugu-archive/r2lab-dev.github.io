@@ -1,0 +1,29 @@
+{%- assign date_format = site.bootstrap.date_format | default: "%b %d, %Y" -%}
+
+<li class="mb-2  post-item">
+    <a class=" text-decoration-none" href="{{ post.url | relative_url }}">
+        <span class="post-meta text-muted">
+            {% if post.story %}
+            <i class="bi bi-journal"></i>
+            {% else %}
+            <i class="bi bi-lightbulb"></i>
+            {% endif %}
+
+            {{ post.date | date: date_format }}
+        </span>
+        <h3 class="h6 mb-0">
+            {{ post.title | escape }}
+        </h3>
+        <!-- 
+    <ul class="list-group list-group-horizontal">
+   
+        {% for cat in post.categories %}
+        <li class="list-group-item small border-0 ps-0 pe-4  text-muted">
+            <i class="bi bi-tag"></i> {{cat}}
+        </li>
+        {% endfor %}
+    </ul> -->
+
+    </a>
+
+</li>
