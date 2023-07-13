@@ -78,12 +78,12 @@ layout: default
         <div class="row mt-5 mb-5">
             <div class="col-md-12">
 
-                <div class="PageNavigation mt-5">
+                <div class=" mt-5">
                     {% if page.previous.url %}
-                    <a class="prev text-start me-5" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
+                    <a class="prev float-start" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
                     {% endif %}
                     {% if page.next.url %}
-                    <a class="next text-end ms-5" href="{{page.next.url}}">{{page.next.title}} &raquo;</a>
+                    <a class="next float-end" href="{{page.next.url}}">{{page.next.title}} &raquo;</a>
                     {% endif %}
                 </div>
             </div>
