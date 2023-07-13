@@ -145,7 +145,7 @@
 
 .markdown-body a {
   background-color: transparent;
-  color: var(--color-accent-fg);
+  /* color: var(--color-accent-fg); */
   text-decoration: none;
 }
 
@@ -271,6 +271,7 @@
 
 .markdown-body a:hover {
   text-decoration: underline;
+  color: var(--bs-link-hover-color);
 }
 
 .markdown-body ::placeholder {

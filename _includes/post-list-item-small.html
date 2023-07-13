@@ -1,7 +1,7 @@
 {%- assign date_format = site.bootstrap.date_format | default: "%b %d, %Y" -%}
 
-<li class="mb-2">
-    <a class="post-link text-decoration-none" href="{{ post.url | relative_url }}">
+<li class="mb-2  post-item">
+    <a class=" text-decoration-none" href="{{ post.url | relative_url }}">
         <span class="post-meta text-muted">
             {% if post.story %}
             <i class="bi bi-journal"></i>

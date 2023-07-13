@@ -8,71 +8,131 @@
 
 
 // $primary : #ff0000;
-html, body{
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+html,
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   // font-size: 16px;
 }
 
 [data-bs-theme=dark] {
   body {
-      --bs-link-color: #9d76f9;
-      --bs-link-color-rgb: 157, 118, 249;
-      --bs-link-hover-color: #533696;
-      --bs-link-hover-color-rgb: 83, 54, 150;
-      --bs-code-color: #efefef;
+    --bs-link-color: #bda4fa;
+    --bs-link-color-rgb: 189,164,250;
+
+    --bs-link-hover-color: #ac8ef1;
+    --bs-link-hover-color-rgb: 172,142,241;
+    --bs-nav-link-hover-color: #ac8ef1;
+
+    --bs-code-color: #efefef;
   }
+  // a:hover, a:focus {
+  //   color : var(--bs-nav-link-hover-color);
+  // }
 }
 
 [data-bs-theme=light] {
   body {
-      --bs-link-color: #8a5cf6;
-      --bs-link-color-rgb: 139, 92, 246;
-      --bs-link-decoration: underline;
-      --bs-link-hover-color: #533696;
-      --bs-link-hover-color-rgb: 83, 54, 150;
+    --bs-link-color: #7039f1;
+    --bs-link-color-rgb: 112,57,241;
+    // --bs-link-color: #8d5dfc;
+    // --bs-link-color-rgb: 141,93,252;
+    --bs-link-hover-color: #9759e4;
+    --bs-link-hover-color-rgb: 151, 89, 228;
+    --bs-nav-link-hover-color: #9759e4;
+
+    --bs-link-decoration: underline;
   }
 }
-.btn{
+
+
+.nav-item {
+  .nav-link.active {
+    color: var(--bs-link-color) !important;
+  }
+  .nav-link {
+    :focus, :hover {
+      color: var(--bs-nav-link-hover-color);
+    }
+  }
+}
+
+
+a{
+  // color: var(--bs-link-color);
+  color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));
+  text-decoration: none;
+  :hover, :focus {
+    color: rgba(var(--bs-link-hover-color-rgb), var(--bs-link-opacity, 1));
+    text-decoration: underline;
+    }
+}
+
+.post-title{
+  color: var(--bs-link-color);
+}
+
+.post-item a, #toc a  {
+  color: var(--bs-body-color);
+  :hover,
+  :active,
+  :focus {
+    color: var(--bs-link-hover-color);
+  }
+}
+
+.btn {
   border-radius: 0 !important;
 }
 
 
-.markdown-body  table.rouge-table tr {
+.markdown-body table.rouge-table tr {
   background-color: transparent !important;
 }
-// [data-bs-theme=dark]{
-//   a {
-//       color:   #9d76f9;
-//       :hover, :active, :focus {
-//       color: rgb(28, 67, 28) !important;
-//     }
-//   }
-// }
+
+
+
+
 .typewriter {
   // https://css-tricks.com/snippets/css/typewriter-effect/
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid var(--bs-link-color); /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
+  overflow: hidden;
+  /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid var(--bs-link-color);
+  /* The typwriter cursor */
+  white-space: nowrap;
+  /* Keeps the content on a single line */
   // margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .15em; /* Adjust as needed */
-  animation: 
+  letter-spacing: .15em;
+  /* Adjust as needed */
+  animation:
     typing 1.5s steps(40, end),
     blink-caret .75s step-end infinite;
 }
 
 /* The typing effect */
 @keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+  from {
+    width: 0
+  }
+
+  to {
+    width: 100%
+  }
 }
 
 /* The typewriter cursor effect */
 @keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: var(--bs-link-color); }
+
+  from,
+  to {
+    border-color: transparent
+  }
+
+  50% {
+    border-color: var(--bs-link-color);
+  }
 }
 
- 
+
 
 // .homepage {
 //   margin-top: 60px;
@@ -121,17 +181,19 @@ html, body{
     font-size: 13px;
   }
 }
+
 .post-list {
-  .h6{
+  .h6 {
     display: inline;
     margin-left: 10px;
   }
-  .bi{
+
+  .bi {
     font-size: 0.8rem;
   }
-  .list-group-item{
+
+  .list-group-item {
     padding: 0.2rem 1rem;
 
   }
 }
-
