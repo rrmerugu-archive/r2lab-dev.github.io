@@ -28,11 +28,15 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: rrmerugu
 github_username: rrmerugu
 
+paginate: 5
+paginate_path: /post/page:num/
+
 
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
   - jekyll-toc
+  - jekyll-paginate
 
 remote_theme: jonaharagon/jekyll-bootstrap-theme
 #theme: jekyll-bootstrap-theme

@@ -13,14 +13,16 @@ layout: posts
             </span>      
         </div> -->
 
-        <div class="alert alert-dark mb-3 py-2 px-2 mt-2 me-3 rounded-0" >
+       <div class="alert alert-dark mb-3 py-2 px-2 mt-2 me-3 rounded-0" >
             <div  style="display: inline-block;">
             <p class="{% if page.url == '/' %}typewriter{% endif %} mb-0">
                 <i class="bi bi-terminal-fill"></i>
                 Hello world! Welcome to my journal 
             </p>
         </div>
-        </div>
+        </div>  
+
+   
 
     </div>
 </div>
